@@ -36,6 +36,14 @@ public class StudentService {
                 System.out.println("Name : " + studentData.getName());
                 System.out.println("Age  : " + studentData.getAge());
 
+                System.out.println("\nDeleting Student with ID 1...");
+
+                studentRepository.deleteById(1);
+
+                System.out.println("Student Deleted Successfully!");
+
+                System.out.println("Remaining Students : " + studentRepository.count());
+
             });
             System.out.println("\nTotal Students : " + studentRepository.count());
             System.out.println("\nStudent with ID 1 Exists : " + studentRepository.existsById(1));
