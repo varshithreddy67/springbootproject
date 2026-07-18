@@ -12,12 +12,8 @@ public class SpringbootprojectApplication {
         ApplicationContext context =
                 SpringApplication.run(SpringbootprojectApplication.class, args);
 
-        Student student = context.getBean(Student.class);
+        StudentService service = context.getBean(StudentService.class);
 
-        student.setName("Varshith Krishna Mohan Reddy Tummuru");
-        student.setAge(21);
-
-        System.out.println("Student Name: " + student.getName());
-        System.out.println("Student Age: " + student.getAge());
+        service.displayStudent();
     }
 }
