@@ -19,5 +19,26 @@ public class StudentService {
         studentRepository.save(student);
 
         System.out.println("Student Saved Successfully!");
+
+        System.out.println("\nStudents in Database:\n");
+
+        for (Student s : studentRepository.findAll()) {
+            System.out.println("-------------------------");
+            System.out.println("ID   : " + s.getId());
+            System.out.println("Name : " + s.getName());
+            System.out.println("Age  : " + s.getAge());
+            System.out.println("\nFinding Student By ID...\n");
+
+            studentRepository.findById(1).ifPresent(studentData -> {
+
+                System.out.println("-------------------------");
+                System.out.println("ID   : " + studentData.getId());
+                System.out.println("Name : " + studentData.getName());
+                System.out.println("Age  : " + studentData.getAge());
+
+            });
+            System.out.println("\nTotal Students : " + studentRepository.count());
+            System.out.println("\nStudent with ID 1 Exists : " + studentRepository.existsById(1));
+        }
     }
 }

@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Component
+
 public class Student {
 
     @Id
