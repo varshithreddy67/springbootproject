@@ -22,13 +22,10 @@ public class StudentService {
         return "Student not found";
     }
     // Add Student
-    public Student addStudent() {
-
-        Student student = new Student();
-        student.setName("Varshith");
-        student.setAge(21);
+    public Student addStudent(Student student) {
 
         return studentRepository.save(student);
+
     }
     public Student updateStudent(Integer id, Student updatedStudent) {
 
