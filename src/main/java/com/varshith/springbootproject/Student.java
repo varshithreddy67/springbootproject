@@ -9,6 +9,7 @@ public class Student {
     private int age;
 
     public Student() {
+        System.out.println("Student object created by Spring");
     }
 
     public Student(String name, int age) {
